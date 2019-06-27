@@ -28,5 +28,8 @@ If you want to develop this code yourself, you can also run:
 
     gulp watch
 
+## Expected behaviour
+The example component simply adds a *Hello World* statement to the Magento `content` container.
+
 ## Current issues
 Gulp is used instead of Webpack, because you don't need most of the cool stuff that Webpack offers: The webserver is not going be to Node-based, but is the Magento webserver instead. Because of this, hot module reloading can not be used.
