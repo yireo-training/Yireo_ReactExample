@@ -31,5 +31,18 @@ If you want to develop this code yourself, you can also run:
 ## Expected behaviour
 The example component simply adds a *Hello World* statement to the Magento `content` container.
 
+## Experiments
+There is a lot of fun stuff you can do now: You can pass in parameters from the PHTML template that become `props` in the React component. For instance, what you could do is add event handlers to those `props`, so that a React component is able to make a callback to a Magento-based JavaScript behavior. This example shows a callback `addMessage` that could be used from within a React component:
+
+        props.addMessage = function(message, type) {
+            if (type === undefined) { type = 'success'; }
+            customerData.set('messages', {
+                messages: [{
+                    type: type,
+                    text: message
+                }]
+            });
+        };
+
 ## Current issues
 Gulp is used instead of Webpack, because you don't need most of the cool stuff that Webpack offers: The webserver is not going be to Node-based, but is the Magento webserver instead. Because of this, hot module reloading can not be used.
