@@ -1,0 +1,18 @@
+<div id="react-example"></div>
+
+<script>
+    require([
+        'domReady',
+        'jquery',
+        'react',
+        'reactDom',
+        'reactExampleComponent'
+    ], function (domReady, $, React, ReactDOM, ReactExampleComponent) {
+        domReady(function () {
+            var data = {};
+            var domElement = $('#react-example')[0];
+            var reactElement = React.createElement(ReactExampleComponent.default, data);
+            return ReactDOM.render(reactElement, domElement);
+        });
+    });
+</script>
